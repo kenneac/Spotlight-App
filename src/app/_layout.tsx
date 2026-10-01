@@ -3,13 +3,17 @@ import InitialLayout from "@/components/InitialLayout";
 import ClerkAndConvexProvider from "@/providers/ClerkAndConvexProvider";
 import { SplashScreen } from "expo-router";
 import { useFonts } from "expo-font";
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import { NavigationBar } from "expo-navigation-bar";
+import { StatusBar } from "expo-status-bar";
+import * as WebBrowser from "expo-web-browser";
 import { Platform } from "react-native";
 
-import { StatusBar } from "expo-status-bar";
-
 SplashScreen.preventAutoHideAsync();
+
+if (Platform.OS !== "web") {
+  WebBrowser.maybeCompleteAuthSession();
+}
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({

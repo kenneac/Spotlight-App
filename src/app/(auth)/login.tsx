@@ -1,23 +1,24 @@
 import { COLORS } from "@/constants/theme";
+import { useWarmUpBrowser } from "@/hooks/useWarmUpBrowser";
 import { styles } from "@/styles/auth.styles";
 import { useSSO } from "@clerk/expo";
 import { Ionicons } from "@expo/vector-icons";
-import { useRouter } from "expo-router";
+import * as Linking from "expo-linking";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 export default function login() {
+  useWarmUpBrowser();
   const { startSSOFlow } = useSSO();
-  const router = useRouter();
 
   const handleGoogleSignIn = async () => {
     try {
       const { createdSessionId, setActive } = await startSSOFlow({
         strategy: "oauth_google",
+        redirectUrl: Linking.createURL("/(auth)/sso-callback"),
       });
 
       if (setActive && createdSessionId) {
         setActive({ session: createdSessionId });
-        router.replace("/(tabs)");
       }
     } catch (error) {
       console.error("OAuth error:", error);
@@ -38,7 +39,7 @@ export default function login() {
       {/* ILLUSTRATION */}
       <View style={styles.illustrationContainer}>
         <Image
-          source={require("../../assets/images/auth-bg-2.png")}
+          source={require("@/assets/images/auth-bg-2.png")}
           style={styles.illustration}
           resizeMode="cover"
         />
