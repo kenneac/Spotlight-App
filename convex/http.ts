@@ -32,14 +32,10 @@ http.route({
     }
    
     const body = await request.text();
-
     const wh = new Webhook(webhookSecret);
 
-    let evt: any;
-
-    // Verify the webhook
     try {
-      evt = wh.verify(body, {
+      wh.verify(body, {
         "svix-id": svixId,
         "svix-timestamp": svixTimestamp,
         "svix-signature": svixSignature,
@@ -52,7 +48,19 @@ http.route({
       });
     }
 
-    // Make sure verification actually returned an event
+    // Parse the now-verified raw body into the Clerk event payload.
+    let evt: unknown;
+
+    try {
+      evt = JSON.parse(body);
+    } catch (error) {
+      console.error("Invalid webhook payload:", error);
+
+      return new Response("Invalid webhook payload", {
+        status: 400,
+      });
+    }
+
     if (!evt || typeof evt !== "object") {
       console.error("Invalid webhook payload:", evt);
 
@@ -61,26 +69,32 @@ http.route({
       });
     }
 
-    const eventType = evt.type;
+    const event = evt as {
+      type?: string;
+      data?: {
+        id?: string;
+        email_addresses?: { email_address?: string }[];
+        first_name?: string | null;
+        last_name?: string | null;
+        image_url?: string;
+      };
+    };
+
+    const eventType = event.type;
 
     console.log("Clerk webhook event:", eventType);
 
     if (eventType === "user.created") {
-      const {
-        id,
-        email_addresses,
-        first_name,
-        last_name,
-        image_url,
-      } = evt.data;
+      const { id, email_addresses, first_name, last_name, image_url } =
+        event.data ?? {};
 
-      if (!id || !email_addresses?.length) {
+      const email = email_addresses?.[0]?.email_address;
+
+      if (!id || !email) {
         return new Response("Invalid user.created payload", {
           status: 400,
         });
       }
-
-      const email = email_addresses[0].email_address;
 
       const name = `${first_name || ""} ${last_name || ""}`.trim();
 
@@ -88,7 +102,7 @@ http.route({
         await ctx.runMutation(internal.users.createUser, {
           email,
           fullname: name,
-          image: image_url,
+          image: image_url ?? "",
           clerkId: id,
           username: email.split("@")[0],
         });
