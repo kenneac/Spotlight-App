@@ -20,7 +20,7 @@ import { Image } from "expo-image";
 import * as FileSystem from "expo-file-system";
 import * as ImagePicker from "expo-image-picker";
 
-import { api } from "@/convex/_generated/api";
+import { api } from "../../../convex/_generated/api";
 import { useMutation } from "convex/react";
 
 export default function CreateScreen() {

@@ -1,6 +1,6 @@
 import { Loader } from "@/components/Loader";
 import { COLORS } from "@/constants/theme";
-import { api } from "@/convex/_generated/api";
+import { api } from "../../../convex/_generated/api";
 import { styles } from "@/styles/feed.styles";
 import { useQuery } from "convex/react";
 import { Image } from "expo-image";

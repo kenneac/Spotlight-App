@@ -1,7 +1,5 @@
 import { Loader } from "@/components/Loader";
 import { COLORS } from "@/constants/theme";
-import { api } from "@/convex/_generated/api";
-import { Doc } from "@/convex/_generated/dataModel";
 import { styles } from "@/styles/profile.styles";
 import { useAuth } from "@clerk/expo";
 import { Ionicons } from "@expo/vector-icons";
@@ -21,6 +19,8 @@ import {
   TouchableWithoutFeedback,
   View,
 } from "react-native";
+import { api } from "../../../convex/_generated/api";
+import type { Doc } from "../../../convex/_generated/dataModel";
 
 export default function Profile() {
   const { signOut, userId } = useAuth();

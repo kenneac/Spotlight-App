@@ -2,7 +2,7 @@ import { Loader } from "@/components/Loader";
 import Post from "@/components/Post";
 import StoriesSection from "@/components/Stories";
 import { COLORS } from "@/constants/theme";
-import { api } from "@/convex/_generated/api";
+import { api } from "../../../convex/_generated/api";
 import { useAuth } from "@clerk/expo";
 import { Ionicons } from "@expo/vector-icons";
 import { useQuery } from "convex/react";

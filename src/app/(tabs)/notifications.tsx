@@ -1,7 +1,7 @@
 import { Loader } from "@/components/Loader";
 import Notification from "@/components/Notification";
 import { COLORS } from "@/constants/theme";
-import { api } from "@/convex/_generated/api";
+import { api } from "../../../convex/_generated/api";
 import { styles } from "@/styles/notifications.styles";
 import { Ionicons } from "@expo/vector-icons";
 import { useQuery } from "convex/react";
