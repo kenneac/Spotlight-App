@@ -50,7 +50,7 @@ export default function SSOCallbackScreen() {
       <View style={styles.loginSection}>
         <ActivityIndicator
           size="large"
-          color="#000000"
+          color="#60db97"
           style={{ marginTop: 20,marginBottom: 20 }}
         />
 

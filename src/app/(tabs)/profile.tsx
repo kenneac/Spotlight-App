@@ -45,7 +45,8 @@ export default function Profile() {
     setIsEditModalVisible(false);
   };
 
-  if (!currentUser || posts === undefined) return <Loader />;
+  // if (!currentUser || posts === undefined) return <Loader />;
+  if (!currentUser) return <Loader />;
 
   return (
     <View style={styles.container}>
@@ -61,72 +62,78 @@ export default function Profile() {
         </View>
       </View>
 
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.profileInfo}>
-          {/* AVATAR & STATS */}
-          <View style={styles.avatarAndStats}>
-            <View style={styles.avatarContainer}>
-              <Image
-                source={currentUser.image}
-                style={styles.avatar}
-                contentFit="cover"
-                transition={200}
-              />
+      {posts === undefined ? (
+        <Loader />
+      ) : (
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={styles.profileInfo}>
+            {/* AVATAR & STATS */}
+            <View style={styles.avatarAndStats}>
+              <View style={styles.avatarContainer}>
+                <Image
+                  source={currentUser.image}
+                  style={styles.avatar}
+                  contentFit="cover"
+                  transition={200}
+                />
+              </View>
+
+              <View style={styles.statsContainer}>
+                <View style={styles.statItem}>
+                  <Text style={styles.statNumber}>{currentUser.posts}</Text>
+                  <Text style={styles.statLabel}>Posts</Text>
+                </View>
+                <View style={styles.statItem}>
+                  <Text style={styles.statNumber}>{currentUser.followers}</Text>
+                  <Text style={styles.statLabel}>Followers</Text>
+                </View>
+                <View style={styles.statItem}>
+                  <Text style={styles.statNumber}>{currentUser.following}</Text>
+                  <Text style={styles.statLabel}>Following</Text>
+                </View>
+              </View>
             </View>
 
-            <View style={styles.statsContainer}>
-              <View style={styles.statItem}>
-                <Text style={styles.statNumber}>{currentUser.posts}</Text>
-                <Text style={styles.statLabel}>Posts</Text>
-              </View>
-              <View style={styles.statItem}>
-                <Text style={styles.statNumber}>{currentUser.followers}</Text>
-                <Text style={styles.statLabel}>Followers</Text>
-              </View>
-              <View style={styles.statItem}>
-                <Text style={styles.statNumber}>{currentUser.following}</Text>
-                <Text style={styles.statLabel}>Following</Text>
-              </View>
+            <Text style={styles.name}>{currentUser.fullname}</Text>
+            {currentUser.bio && (
+              <Text style={styles.bio}>{currentUser.bio}</Text>
+            )}
+
+            <View style={styles.actionButtons}>
+              <TouchableOpacity
+                style={styles.editButton}
+                onPress={() => setIsEditModalVisible(true)}
+              >
+                <Text style={styles.editButtonText}>Edit Profile</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.shareButton}>
+                <Ionicons name="share-outline" size={20} color={COLORS.white} />
+              </TouchableOpacity>
             </View>
           </View>
 
-          <Text style={styles.name}>{currentUser.fullname}</Text>
-          {currentUser.bio && <Text style={styles.bio}>{currentUser.bio}</Text>}
+          {posts.length === 0 && <NoPostsFound />}
 
-          <View style={styles.actionButtons}>
-            <TouchableOpacity
-              style={styles.editButton}
-              onPress={() => setIsEditModalVisible(true)}
-            >
-              <Text style={styles.editButtonText}>Edit Profile</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.shareButton}>
-              <Ionicons name="share-outline" size={20} color={COLORS.white} />
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        {posts.length === 0 && <NoPostsFound />}
-
-        <FlatList
-          data={posts}
-          numColumns={3}
-          scrollEnabled={false}
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              style={styles.gridItem}
-              onPress={() => setSelectedPost(item)}
-            >
-              <Image
-                source={item.imageUrl}
-                style={styles.gridImage}
-                contentFit="cover"
-                transition={200}
-              />
-            </TouchableOpacity>
-          )}
-        />
-      </ScrollView>
+          <FlatList
+            data={posts}
+            numColumns={3}
+            scrollEnabled={false}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                style={styles.gridItem}
+                onPress={() => setSelectedPost(item)}
+              >
+                <Image
+                  source={item.imageUrl}
+                  style={styles.gridImage}
+                  contentFit="cover"
+                  transition={200}
+                />
+              </TouchableOpacity>
+            )}
+          />
+        </ScrollView>
+      )}
 
       {/* EDIT PROFILE MODAL */}
       <Modal
