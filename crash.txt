@@ -1,0 +1,105 @@
+--------- beginning of main
+10-03 22:39:33.405   697   735 E BatteryDump: !@new_battery_dump : 3926,1012,1200,1800,43,356,355,492,0,0,425,0,0,Charging,NO_CHARGING,Normal,Good,PDIC,0,Normal,0,0,12600,0x0,0x20000,0x0,0,0,0000,0000,00000000,0,0,0,0,1171,38172,4349,990,0,
+10-03 22:39:40.871  2591  2676 E RequestManager_FLP: [LocationManager] Location request AB19FBA8(Listener) network interval=0ms (min=0ms) from system(SLocationService) (1000_FINE_unknown_false_foreground)
+10-03 22:39:40.884  2591  2676 E RequestManager_FLP: [LocationManager] Location request 7B3310C3(Listener) fused interval=0ms (min=0ms) from system(SLocationService) (1000_FINE_unknown_false_foreground)
+10-03 22:39:41.065  2591  2676 E RequestManager_FLP: [LocationManager] Location remove AB19FBA8 from system
+10-03 22:39:41.075  2591  2676 E RequestManager_FLP: [LocationManager] Location remove 7B3310C3 from system
+10-03 22:39:41.697  2681 27828 E pageboostd: alp start : app comkenneacsteamspotlight
+10-03 22:39:41.796  2681  2681 E pageboostd: Received HALT command code 2
+10-03 22:39:41.799  2681 27828 E pageboostd: comkenneacsteamspotlight, amt 11272192 scnt 1 fcnt 7
+10-03 22:39:41.800  2681 27828 E pageboostd: alp end : app comkenneacsteamspotlight data_amount 11272192
+10-03 22:39:41.800  2681 27828 E pageboostd: alp halted comkenneacsteamspotlight
+10-03 22:39:41.892   677   715 E HYPER-HAL: [HandlerSysfs.cpp]doResourceHandling(): Couldn't Open Sysfs - /sys/kernel/sec_mm/am_app_launch
+10-03 22:39:41.896   677   715 E HYPER-HAL: [HandlerSysfs.cpp]doResourceHandling(): Couldn't Open Sysfs - /sys/kernel/sec_mm/am_app_launch
+10-03 22:39:42.029   677   715 E HYPER-HAL: [HandlerSysfs.cpp]doResourceHandling(): Couldn't Open Sysfs - /sys/kernel/sec_mm/am_app_launch
+10-03 22:39:42.070  2681  2681 E pageboostd: Received HALT command code 2
+10-03 22:39:42.081   677   715 E HYPER-HAL: [HandlerSysfs.cpp]doResourceHandling(): Couldn't Open Sysfs - /sys/kernel/sec_mm/am_app_launch
+10-03 22:39:42.084   677   715 E HYPER-HAL: [HandlerSysfs.cpp]doResourceHandling(): Couldn't Open Sysfs - /sys/kernel/sec_mm/am_app_launch
+10-03 22:39:42.237   740   740 E SurfaceFlinger: alpha changed 1.000 -> 0.000 - Surface(name=Task=2868)/@0xe400aac_transition-leash#2521
+10-03 22:39:42.303   740   740 E SurfaceFlinger: alpha changed 0.000 -> 0.662 - Surface(name=Task=2868)/@0xe400aac_transition-leash#2521
+10-03 22:39:42.662 27829 27849 E steam.spotlight: yuv_configs size = 11
+10-03 22:39:42.663 27829 27849 E steam.spotlight: returning yuv_configs size = 11
+10-03 22:39:42.664 27829 27849 E HWUI    : Device claims wide gamut support, cannot find matching config, error = EGL_SUCCESS
+10-03 22:39:42.855   740   770 E HWComposer: getSupportedContentTypes: getSupportedContentTypes failed for display 0: Unsupported (8)
+10-03 22:39:43.440   697   735 E BatteryDump: !@new_battery_dump : 3894,653,1200,1800,43,356,355,491,0,0,425,0,0,Charging,NO_CHARGING,Normal,Good,PDIC,0,Normal,0,0,12600,0x0,0x20000,0x0,0,0,0000,0000,00000000,0,0,0,0,1171,38173,4355,990,0,
+10-03 22:39:43.531   677 27841 E HYPER-HAL: [HandlerSysfs.cpp]doResourceHandling(): Couldn't Open Sysfs - /sys/kernel/sec_mm/am_app_launch
+10-03 22:39:43.867 27829 27861 I ReactNativeJS: Running "main"
+10-03 22:39:43.894   677 27840 E HYPER-HAL: [HandlerSysfs.cpp]doResourceHandling(): Couldn't Open Sysfs - /sys/kernel/sec_mm/am_app_launch
+10-03 22:39:44.066 27829 27861 E ReactNativeJS: [Error: No address provided to ConvexReactClient.
+10-03 22:39:44.066 27829 27861 E ReactNativeJS: If trying to deploy to production, make sure to follow all the instructions found at https://docs.convex.dev/production/hosting/
+10-03 22:39:44.066 27829 27861 E ReactNativeJS: If running locally, make sure to run `convex dev` and ensure the .env.local file is populated.]
+10-03 22:39:44.069 27829 27861 E ReactNativeJS: [Error: No address provided to ConvexReactClient.
+10-03 22:39:44.069 27829 27861 E ReactNativeJS: If trying to deploy to production, make sure to follow all the instructions found at https://docs.convex.dev/production/hosting/
+10-03 22:39:44.069 27829 27861 E ReactNativeJS: If running locally, make sure to run `convex dev` and ensure the .env.local file is populated.]
+10-03 22:39:44.086 27829 27861 E ReactNativeJS: [Error: No address provided to ConvexReactClient.
+10-03 22:39:44.086 27829 27861 E ReactNativeJS: If trying to deploy to production, make sure to follow all the instructions found at https://docs.convex.dev/production/hosting/
+10-03 22:39:44.086 27829 27861 E ReactNativeJS: If running locally, make sure to run `convex dev` and ensure the .env.local file is populated.]
+10-03 22:39:44.087 27829 27861 E ReactNativeJS: [Error: No address provided to ConvexReactClient.
+10-03 22:39:44.087 27829 27861 E ReactNativeJS: If trying to deploy to production, make sure to follow all the instructions found at https://docs.convex.dev/production/hosting/
+10-03 22:39:44.087 27829 27861 E ReactNativeJS: If running locally, make sure to run `convex dev` and ensure the .env.local file is populated.]
+10-03 22:39:44.102 27829 27861 E ReactNativeJS: { [TypeError: Cannot read property 'ErrorBoundary' of undefined]
+10-03 22:39:44.102 27829 27861 E ReactNativeJS:   componentStack: '\n    at ContextNavigator (address at index.android.bundle:1:1121977)\n    at ExpoRoot (address at index.android.bundle:1:1121798)\n    at App (<anonymous>)\n    at RCTView (<anonymous>)\n    at View (address at index.android.bundle:1:737295)\n    at AppContainer (address at index.android.bundle:1:737110)',
+10-03 22:39:44.102 27829 27861 E ReactNativeJS:   isComponentError: true }
+--------- beginning of crash
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: FATAL EXCEPTION: mqt_v_native
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: Process: com.kenneacsteam.spotlight, PID: 27829
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: com.facebook.react.common.JavascriptException: Error: No address provided to ConvexReactClient.
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: If trying to deploy to production, make sure to follow all the instructions found at https://docs.convex.dev/production/hosting/
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: If running locally, make sure to run `convex dev` and ensure the .env.local file is populated., stack:
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: ConvexReactClient@1:1479655
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: anonymous@1:525825
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: loadModuleImplementation@1:530089
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: guardedLoadModule@1:529710
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: metroRequire@1:529149
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: anonymous@1:525275
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: loadModuleImplementation@1:530089
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: guardedLoadModule@1:529669
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: metroRequire@1:529149
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: get@1:896363
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: metroContext@1:896124
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: loadRoute@1:2073523
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: getLayoutNode@1:1055783
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: _loop3@1:1835433
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: getDirectoryTree@1:1053944
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: getRoutes@1:1053327
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: getRoutes@1:1052896
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: useStore@1:965693
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: ContextNavigator@1:1122146
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: renderWithHooks@1:615799
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: beginWork@1:647156
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: workLoopSync@1:663873
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: renderRootSync@1:663708
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: performWorkOnRoot@1:660535
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: performWorkOnRootViaSchedulerTask@1:611588
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: 
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: 	at com.facebook.react.modules.core.ExceptionsManagerModule.reportException(ExceptionsManagerModule.kt:52)
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: 	at com.facebook.jni.NativeRunnable.run(Native Method)
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:959)
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:100)
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadHandler.dispatchMessage(MessageQueueThreadHandler.kt:21)
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:257)
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:342)
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadImpl$Companion.startNewBackgroundThread$lambda$0(MessageQueueThreadImpl.kt:152)
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadImpl$Companion.$r8$lambda$YYXYCFexeoKtAeDpeNYkxZZlpbA(MessageQueueThreadImpl.kt:0)
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadImpl$Companion$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+10-03 22:39:44.135 27829 27862 E AndroidRuntime: 	at java.lang.Thread.run(Thread.java:1571)
+10-03 22:39:44.139   677   715 E HYPER-HAL: [HandlerSysfs.cpp]doResourceHandling(): Couldn't Open Sysfs - /sys/kernel/sec_mm/am_app_launch
+10-03 22:39:44.167  2681  2681 E pageboostd: Received HALT command code 2
+--------- beginning of system
+10-03 22:39:44.192  1027  1570 E WindowManager: win=Window{8a360a0 u0 com.sec.android.app.launcher/com.sec.android.app.launcher.activities.LauncherActivity} destroySurfaces: appStopped=true cleanupOnResume=false win.mWindowRemovalAllowed=false win.mRemoveOnExit=false win.mViewVisibility=8 caller=com.android.server.wm.ActivityRecord.destroySurfaces:25 com.android.server.wm.ActivityRecord.activityStopped:204 com.android.server.wm.ActivityClientController.activityStopped:95 android.app.IActivityClientController$Stub.onTransact:722 com.android.server.wm.ActivityClientController.onTransact:1 android.os.Binder.execTransactInternal:1541 android.os.Binder.execTransact:1480 
+10-03 22:39:44.305   677   715 E HYPER-HAL: [HandlerSysfs.cpp]doResourceHandling(): Couldn't Open Sysfs - /sys/kernel/sec_mm/am_app_launch
+10-03 22:39:44.357   740   740 E SurfaceFlinger: alpha changed 1.000 -> 0.000 - Surface(name=Task=1)/@0x4b751a0_transition-leash#2532
+10-03 22:39:44.408  1436  1436 E {OngoingActivityController}: getTaskInfo find task 2868 fail. taskInfoList.size:2
+10-03 22:39:44.497  1027  1549 E WindowManager: win=Window{595cde4 u0 Splash Screen com.kenneacsteam.spotlight} destroySurfaces: appStopped=false cleanupOnResume=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=false win.mViewVisibility=8 caller=com.android.server.wm.ActivityRecord.destroySurfaces:25 com.android.server.wm.WindowState.onExitAnimationDone:216 com.android.server.wm.WindowState.onAnimationFinished:174 com.android.server.wm.WindowContainer$$ExternalSyntheticLambda5.onAnimationFinished:26 com.android.server.wm.SurfaceAnimator.cancelAnimation:19 com.android.server.wm.SurfaceAnimator.cancelAnimation:1 com.android.server.wm.WindowContainer.cancelAnimation:12 
+10-03 22:39:44.500  1027  1549 E WindowManager: win=Window{49437c5 u0 com.kenneacsteam.spotlight/com.kenneacsteam.spotlight.MainActivity EXITING} destroySurfaces: appStopped=false cleanupOnResume=false win.mWindowRemovalAllowed=true win.mRemoveOnExit=true win.mViewVisibility=0 caller=com.android.server.wm.ActivityRecord.destroySurfaces:25 com.android.server.wm.WindowState.onExitAnimationDone:216 com.android.server.wm.WindowState.onAnimationFinished:174 com.android.server.wm.WindowContainer$$ExternalSyntheticLambda5.onAnimationFinished:26 com.android.server.wm.SurfaceAnimator.cancelAnimation:19 com.android.server.wm.SurfaceAnimator.cancelAnimation:1 com.android.server.wm.WindowContainer.cancelAnimation:12 
+10-03 22:39:44.544   740   740 E BpTransactionCompletedListener: Failed to transact (-32)
+10-03 22:39:44.590   740   740 E SurfaceFlinger: alpha changed 0.000 -> 1.000 - Surface(name=Task=1)/@0x4b751a0_transition-leash#2532
+10-03 22:39:44.624  2066  2066 E SurfaceComposerClient: SurfaceComposerClient::Transaction::setAlpha: invalid alpha -0.036060, clamping
+10-03 22:39:44.641  2066  2066 E SurfaceComposerClient: SurfaceComposerClient::Transaction::setAlpha: invalid alpha -0.047921, clamping
+10-03 22:39:44.657   740   740 E SurfaceFlinger: alpha changed 0.080 -> 0.000 - Surface(name=Task=2868)/@0x166d11e_transition-leash#2533
+10-03 22:39:44.657  2066  2066 E SurfaceComposerClient: SurfaceComposerClient::Transaction::setAlpha: invalid alpha -0.023157, clamping
+10-03 22:39:45.082   677 27843 E HYPER-HAL: [HandlerSysfs.cpp]doResourceHandling(): Couldn't Open Sysfs - /sys/kernel/sec_mm/am_app_launch
+10-03 22:39:45.806   677 27884 E HYPER-HAL: [HandlerSysfs.cpp]doResourceHandling(): Couldn't Open Sysfs - /sys/kernel/sec_mm/am_app_launch
+10-03 22:39:46.077  1027  3555 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+10-03 22:39:47.183  1027  1417 E Pageboost: ioinfo read failed
+10-03 22:39:48.084   677 27844 E HYPER-HAL: [HandlerSysfs.cpp]doResourceHandling(): Couldn't Open Sysfs - /sys/kernel/sec_mm/am_app_launch
