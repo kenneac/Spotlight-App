@@ -23,7 +23,6 @@ export default function Index() {
   const posts = useQuery(api.posts.getFeedPosts);
 
   if (posts === undefined) return <Loader />;
-  if (posts.length === 0) return <NoPostsFound />;
 
   // this does nothing
   const onRefresh = () => {
@@ -50,6 +49,7 @@ export default function Index() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 60 }}
         ListHeaderComponent={<StoriesSection />}
+        ListEmptyComponent={<NoPostsFound />}
         refreshControl={
           <RefreshControl
             refreshing={refreshing}

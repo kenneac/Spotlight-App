@@ -1,12 +1,10 @@
 import { useAuth } from "@clerk/expo";
-import { router, Stack } from "expo-router";
+import { Stack } from "expo-router";
 
 export default function InitialLayout() {
   const { isLoaded, isSignedIn } = useAuth();
 
-  if (!isLoaded) {
-    router.replace("/(auth)/sso-callback");
-  }
+  if (!isLoaded) return;
 
   return (
     <Stack>

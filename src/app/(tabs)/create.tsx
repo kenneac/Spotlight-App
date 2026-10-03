@@ -16,8 +16,9 @@ import {
 } from "react-native";
 
 import { Image } from "expo-image";
+import { fetch } from "expo/fetch";
+import { File } from "expo-file-system";
 
-import * as FileSystem from "expo-file-system";
 import * as ImagePicker from "expo-image-picker";
 
 import { api } from "../../../convex/_generated/api";
@@ -42,6 +43,8 @@ export default function CreateScreen() {
     if (!result.canceled) setSelectedImage(result.assets[0].uri);
   };
 
+  console.log("Selected image:", selectedImage);
+
   const generateUploadUrl = useMutation(api.posts.generateUploadUrl);
   const createPost = useMutation(api.posts.createPost);
 
@@ -49,29 +52,49 @@ export default function CreateScreen() {
     if (!selectedImage) return;
 
     try {
-      setIsSharing(true);
-      const uploadUrl = await generateUploadUrl();
+      try {
+        setIsSharing(true);
 
-      const imageResponse = await fetch(selectedImage);
-      const blob = await imageResponse.blob();
+        const uploadUrl = await generateUploadUrl();
 
-      const uploadResult = await fetch(uploadUrl, {
-        method: "POST",
-        headers: { "Content-Type": "image/jpeg" },
-        body: blob,
-      });
+        // Create a File from the local image URI
+        const file = new File(selectedImage);
 
-      if (!uploadResult.ok) throw new Error("Upload failed");
+        // Upload directly to Convex
+        const uploadResult = await fetch(uploadUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": file.type || "image/jpeg",
+          },
+          body: file,
+        });
 
-      const { storageId } = await uploadResult.json();
-      await createPost({ storageId, caption });
+        if (!uploadResult.ok) {
+          throw new Error(
+            `Upload failed: ${uploadResult.status} ${uploadResult.statusText}`,
+          );
+        }
 
-      setSelectedImage(null);
-      setCaption("");
+        const { storageId } = await uploadResult.json();
 
-      router.push("/(tabs)");
+        // Create the post
+        await createPost({
+          storageId,
+          caption,
+        });
+
+        // Reset
+        setSelectedImage(null);
+        setCaption("");
+
+        router.push("/(tabs)");
+      } catch (error) {
+        console.error("Error sharing post:", error);
+      } finally {
+        setIsSharing(false);
+      }
     } catch (error) {
-      console.log("Error sharing post");
+      console.log("Error sharing post", error);
     } finally {
       setIsSharing(false);
     }
